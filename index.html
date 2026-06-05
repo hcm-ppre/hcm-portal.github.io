@@ -4,37 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PPRE JP Portal</title>
-
+    
     <link rel="icon" href="https://absensi.pp-presisi.co.id/logo.png" type="image/png">
 
     <style>
-        /* Menghapus jarak bawaan browser */
+        /* Reset jarak dan mengatur tinggi responsif dinamis */
         html, body {
             margin: 0;
             padding: 0;
             width: 100%;
-            height: 100%;
+            height: 100%; /* Fallback untuk browser lama */
+            height: 100dvh; /* Mencegah terpotong oleh address bar di HP */
             overflow: hidden; 
+            background-color: #ffffff; /* Menghindari flash putih/hitam */
         }
 
-        /* Mengatur iframe fullscreen */
+        /* Memastikan iframe benar-benar penuh */
         .iframe-fullscreen {
             position: absolute;
             top: 0;
             left: 0;
-            width: 100vw;
-            height: 100vh;
+            width: 100%;
+            height: 100%;
             border: none;
-            z-index: 1; /* Posisi dasar */
+            display: block; /* Menghilangkan spasi aneh di bagian bawah iframe */
         }
 
-        /* 2. KODE CSS FLOATING NAVICON: Mengatur posisi tombol navigasi melayang */
+        /* Navicon */
         .floating-navicon {
             position: fixed;
-            top: 15px;      /* Jarak dari atas layar */
-            right: 15px;    /* Jarak dari kanan layar (ubah ke 'left' jika ingin di kiri) */
-            z-index: 999;   /* Memastikan ikon berada di atas iframe */
-            background-color: white; /* Latar belakang opsional */
+            top: 15px;      
+            right: 15px;    
+            z-index: 999;   
+            background-color: white; 
             padding: 10px;
             border-radius: 5px;
             box-shadow: 0px 2px 5px rgba(0,0,0,0.3);
@@ -44,7 +46,6 @@
             justify-content: center;
         }
 
-        /* Mengatur ukuran gambar/ikon di dalam navicon */
         .floating-navicon img {
             width: 25px;
             height: 25px;
@@ -53,7 +54,7 @@
 </head>
 <body>
 
-    <a href="https://url-tujuan-anda.com" class="floating-navicon" title="Kembali ke Beranda">
+    <a href="https://url-tujuan-anda.com" class="floating-navicon">
         <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="Menu">
     </a>
 
